@@ -1,0 +1,108 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+body{
+    font-family: 'Roboto Slab', serif !important;
+}
+
+.navbar{
+    background-color: #001233;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-item{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.3s ease-in-out all;
+    height: 8vh;
+    justify-content:space-around ;
+}
+
+.navbar-item:hover{
+    color: #fffb05 !important;
+}
+.navbar-item-usuario{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease-in-out all;
+    height: 8vh;
+    padding-top: 25px;
+    padding-left: 30px;
+    align-items: end;
+    
+}
+.navbar-item-usuario:hover{
+    color: #fffb05 !important;
+}
+
+.nuevo-paciente{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+/* main content */
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crud-container{
+    max-width: auto;
+    max-height: 500px;
+    padding: 2rem 3rem;
+    overflow: auto;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    
+}
+
+.crud-container th{
+    position: sticky;
+    top: 0px;
+    background-color: #eaeaea;
+}
+
+.crud-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 1rem 2rem ;
+    border-bottom: 1px solid;
+}
+
+.crud-container h1 {
+    font-weight: bold;
+    font-size: 16px;
+    overflow: scroll;
+}
+
+.button span{
+    margin-left: 10px;
+}
+
+.title h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+tbody{
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even){
+    background-color: #eaeaea;
+}

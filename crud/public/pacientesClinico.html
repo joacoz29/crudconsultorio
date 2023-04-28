@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+    crossorigin="anonymous"></script>
+  <title>Registro Pacientes Dr.Jorge Pandis</title>
+</head>
+
+<body>
+  <div>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            Pacientes Kinesiología
+          </a>
+          <div class="navbar-brand">
+            <a class="navbar-item" href="pacientesTraumatología.html">
+              Pacientes Traumatología
+            </a>
+            <div class="navbar-brand">
+              <a class="navbar-item" href="pacientesNutrición.html">
+                Pacientes Nutrición
+              </a>
+            </div>
+            <div class="navbar-brand">
+              <a class="navbar-item" href="pacientesNutrición.html">
+                Pacientes Clinico
+              </a>
+            </div>
+            <div class="navbar-item-usuario">
+              <span id="user-email"></span>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <button class="button is-info is-light" id="logout-button">
+                    Cerrar sesión
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+  
+  <div class="title">
+    <h1>Pacientes Registrados Dr. Jorge Pandis</h1>
+  </div>
+  <div class="buscador">
+    <div>
+      <div class="field has-addons">
+        <div class="control">
+          <input data-search class="input is-rounded" type="text" placeholder="Buscar" type="search" id="search">
+        </div>
+        <div class="control">
+          <a class="button is-info">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nuevo-paciente">
+<button class="button is-success" id="openRegisterModal">
+  <i class="fas fa-plus"></i>
+  <span> Nuevo Paciente</span>
+</button>
+</div>
+  <main class="main-content">
+    <div class="crud-container">
+      <div class="crud-header">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+              <th>DNI</th>
+              <th>O.S</th>
+              <th>N°AFL</th>
+              <th>Telefono</th>
+              <th>DX</th>
+              <th>DR</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="pacientes-table">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <div class="modal" id="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Registrar nuevo Paciente</p>
+        <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="register-form">
+          <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+              <input class="input" type="text" name="nombre" placeholder="Nombre">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Apellido</label>
+            <div class="control">
+              <input class="input" type="text" name="apellido" placeholder="Apellido">
+            </div>
+            <br>
+            <div class="field">
+              <label class="label">Sexo</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="sexo" value="masculino">
+                  Masculino
+                </label>
+                <label class="radio">
+                  <input type="radio" name="sexo" value="femenino">
+                  Femenino
+                </label>
+              </div>
+            </div>
+              <br>
+          <div class="field">
+            <label class="label">DNI</label>
+            <div class="control">
+              <input class="input" type="number" name="dni" placeholder="Documento de Identidad">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Edad</label>
+            <div class="control">
+              <input class="input" type="number" name="edad" placeholder="Edad">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Domicilio</label>
+            <div class="control">
+              <input class="input" type="text" name="Domicilio" placeholder="Domicilio">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Obra Social</label>
+            <div class="control">
+              <input class="input" type="text" name="Obra Social" placeholder="Obra Social">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">N°AFL</label>
+            <div class="control">
+              <input class="input" type="text" name="AFL" placeholder="N°AFL">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Telefono</label>
+            <div class="control has-icons-left">
+              <input class="input is-success" type="tel" name="cel" placeholder="+541162178474">
+              <span class="icon is-small is-left">
+                <i class="fas fa-phone"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Correo</label>
+            <div class="control has-icons-left">
+              <input class="input is-success" type="email" name="email" placeholder="correo@correo.com.ar">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Diagnostico</label>
+            <div class="control">
+              <input class="input" type="text" name="DX" placeholder="DX">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Doctor</label>
+            <div class="control">
+              <input class="input" type="text" name="Doctor" placeholder="Doctor">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Historial Clínico</label>
+            <div class="control">
+              <textarea class="textarea" name="desc"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Anotaciones</label>
+            <div class="control">
+              <textarea class="textarea is-large" name="anotaciones"></textarea>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button type="submit" class="button is-success"><i class="fas fa-save"></i><span>Registrar</span></button>
+        </form>
+      </footer>
+    </div>
+  </div>
+  <div class="modal" id="modal-update">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Actualizar Paciente</p>
+        <button class="delete" aria-label="close" id="closeUpdateModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="update-form">
+          <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+              <input class="input" type="text" name="nombre" placeholder="Nombre">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Apellido</label>
+            <div class="control">
+              <input class="input" type="text" name="apellido" placeholder="Apellido">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">DNI</label>
+            <div class="control">
+              <input class="input" type="number" name="dni" placeholder="Documento de Identidad">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Edad</label>
+            <div class="control">
+              <input class="input" type="number" name="edad" placeholder="Edad">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Domicilio</label>
+            <div class="control">
+              <input class="input" type="text" name="Domicilio" placeholder="Domicilio">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Obra Social</label>
+            <div class="control">
+              <input class="input" type="text" name="Obra Social" placeholder="Obra Social">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">N°AFL</label>
+            <div class="control">
+              <input class="input" type="text" name="AFL" placeholder="N°AFL">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Telefono</label>
+            <div class="control has-icons-left">
+              <input class="input is-success" type="tel" name="cel" placeholder="+541162178474">
+              <span class="icon is-small is-left">
+                <i class="fas fa-phone"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Correo</label>
+            <div class="control has-icons-left">
+              <input class="input is-success" type="email" name="email" placeholder="correo@correo.com.ar">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Diagnostico</label>
+            <div class="control">
+              <input class="input" type="text" name="DX" placeholder="DX">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Doctor</label>
+            <div class="control">
+              <input class="input" type="text" name="Doctor" placeholder="Doctor">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Historial Clínico</label>
+            <div class="control">
+              <textarea class="textarea is-large" name="desc" placeholder="Textarea"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Anotaciones</label>
+            <div class="control">
+              <textarea class="textarea is-large" name="anotaciones"></textarea>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button type="submit" class="button is-success"><i class="fas fa-save"></i><span>Actualizar</span></button>
+        </form>
+      </footer>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+  <script src="./js/appClinico.js"></script>
+  <script>
+    
+    // Verificar si hay un usuario autenticado
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (!user) {
+        // Redirigir al usuario a la página de inicio de sesión si no está autenticado
+        window.location.replace("login.html");
+      }
+    });
+  </script>
+</body>
+</html>
